@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CameraFollow : MonoBehaviour {
+public class CameraFollowXY : MonoBehaviour {
 	public Transform objectToFollow;
 	public Vector2 movementRatio = Vector2.one;
 
