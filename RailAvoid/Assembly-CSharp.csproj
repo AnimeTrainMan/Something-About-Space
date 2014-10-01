@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Effects\CometMoveForward.cs" />
      <Compile Include="Assets\Scripts\AddToScoreOnTriggerEnter.cs" />
      <Compile Include="Assets\Scripts\Bank Trash.cs" />
      <Compile Include="Assets\Scripts\Bank.cs" />
@@ -53,17 +54,23 @@
      <Compile Include="Assets\Scripts\BankZ.cs" />
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\CameraFollowXY.cs" />
-     <Compile Include="Assets\Scripts\DestroyonInvisible.cs" />
      <Compile Include="Assets\Scripts\EnemyAI.cs" />
      <Compile Include="Assets\Scripts\HSBColor.cs" />
+     <Compile Include="Assets\Scripts\HealthManager.cs" />
      <Compile Include="Assets\Scripts\MoveForward.cs" />
      <Compile Include="Assets\Scripts\RandomSpawner.cs" />
+     <Compile Include="Assets\Scripts\Rotate.cs" />
      <Compile Include="Assets\Scripts\RotateTower.cs" />
      <Compile Include="Assets\Scripts\ScaleOverTime.cs" />
      <Compile Include="Assets\Scripts\ScoreManager.cs" />
      <Compile Include="Assets\Scripts\ScrollTexture.cs" />
      <Compile Include="Assets\Scripts\ShipMovement.cs" />
      <Compile Include="Assets\Scripts\ShootForward.cs" />
+     <Compile Include="Assets\prefabs\DamagePlayerOnCollision.cs" />
+     <Compile Include="Assets\prefabs\DamagePlayerOnTrigger.cs" />
+     <Compile Include="Assets\prefabs\DestroyonInvisible.cs" />
+     <None Include="Assets\Effects\Normal-Diffuse.shader" />
+     <None Include="Assets\Effects\Unlit-Normal.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
