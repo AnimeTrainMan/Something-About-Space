@@ -69,6 +69,7 @@
      <Compile Include="Assets\prefabs\DamagePlayerOnCollision.cs" />
      <Compile Include="Assets\prefabs\DamagePlayerOnTrigger.cs" />
      <Compile Include="Assets\prefabs\DestroyonInvisible.cs" />
+     <Compile Include="Assets\prefabs\HealPlayerOnTrigger.cs" />
      <None Include="Assets\Effects\Normal-Diffuse.shader" />
      <None Include="Assets\Effects\Unlit-Normal.shader" />
   </ItemGroup>
