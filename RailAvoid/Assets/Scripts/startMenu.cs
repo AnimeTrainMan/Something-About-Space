@@ -22,7 +22,7 @@ public class startMenu : MonoBehaviour
 	{
 		GUI.skin = startSkin;
 	
-		if (GUI.Button(new Rect(Screen.width/2 - 150,Screen.height/2 - 150,300,150), ""))
+		if (GUI.Button(new Rect(Screen.width/2 - 150,Screen.height/2 - 100,300,150), ""))
 		{
 			Debug.Log("you clicked the start button");
 			Application.LoadLevel("TestingPlayerMove");

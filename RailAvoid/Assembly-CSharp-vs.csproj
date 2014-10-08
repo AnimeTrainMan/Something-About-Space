@@ -66,8 +66,10 @@
      <Compile Include="Assets\Scripts\ScrollTexture.cs" />
      <Compile Include="Assets\Scripts\ShipMovement.cs" />
      <Compile Include="Assets\Scripts\ShootForward.cs" />
+     <Compile Include="Assets\Scripts\bgMover.cs" />
      <Compile Include="Assets\Scripts\changeTitleColor.cs" />
      <Compile Include="Assets\Scripts\startMenu.cs" />
+     <Compile Include="Assets\Scripts\titleFloat.cs" />
      <Compile Include="Assets\prefabs\DamagePlayerOnCollision.cs" />
      <Compile Include="Assets\prefabs\DamagePlayerOnTrigger.cs" />
      <Compile Include="Assets\prefabs\DestroyonInvisible.cs" />
