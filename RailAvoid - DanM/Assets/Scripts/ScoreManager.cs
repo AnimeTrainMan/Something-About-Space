@@ -6,17 +6,19 @@ public class ScoreManager : MonoBehaviour {
 	public int currentLevel = 0;
 	public int[] levelScoreThresholds;
 	public int score = 0;
+	public int Bonus = 1;
 
 	public delegate void LevelChangedEvent(int newlevel);
 	public event LevelChangedEvent LevelChanged;
 
-
-	// Use this for initialization
-	//void OnGUI(){
-	//	GUILayout.Label ("Score: " + score);
-	//}
+	
+	void OnGUI(){
+		GUILayout.Label ("Score: " + score);
+	}
 
 	void Update(){
+		score = score + (1 * Bonus);
+
 		//gamestate handler
 		if(score > levelScoreThresholds[currentLevel]){
 			currentLevel += 1;

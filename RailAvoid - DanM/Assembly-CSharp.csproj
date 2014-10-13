@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{379BD422-10E1-090B-9743-565883D2A89F}</ProjectGuid>
+	<ProjectGuid>{0009339A-2B8B-F0E0-4638-C059F786F735}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -19,7 +19,7 @@
 	<DebugType>full</DebugType>
 	<Optimize>false</Optimize>
 	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_4_5_3;UNITY_4_5;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
+	<DefineConstants>DEBUG;TRACE;UNITY_4_5_3;UNITY_4_5;UNITY_STANDALONE_OSX;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_GAMECENTER;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
 	<ErrorReport>prompt</ErrorReport>
 	<WarningLevel>4</WarningLevel>
 	<NoWarn>0169</NoWarn>
@@ -47,6 +47,8 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Effects\CometMoveForward.cs" />
+     <Compile Include="Assets\Effects\DestroyParticleWhenFinished.cs" />
+     <Compile Include="Assets\Effects\ExplosionOnTrigger.cs" />
      <Compile Include="Assets\Scripts\AddToScoreOnTriggerEnter.cs" />
      <Compile Include="Assets\Scripts\Bank Trash.cs" />
      <Compile Include="Assets\Scripts\Bank.cs" />
@@ -66,10 +68,16 @@
      <Compile Include="Assets\Scripts\ScrollTexture.cs" />
      <Compile Include="Assets\Scripts\ShipMovement.cs" />
      <Compile Include="Assets\Scripts\ShootForward.cs" />
+     <Compile Include="Assets\Scripts\SpeedManager.cs" />
      <Compile Include="Assets\prefabs\DamagePlayerOnCollision.cs" />
-     <Compile Include="Assets\prefabs\DamagePlayerOnTrigger.cs" />
      <Compile Include="Assets\prefabs\DestroyonInvisible.cs" />
+     <Compile Include="Assets\prefabs\Enemy Cast\DamagePlayerOnTrigger.cs" />
+     <Compile Include="Assets\prefabs\Enemy Cast\DestroyAfterDelay.cs" />
+     <Compile Include="Assets\prefabs\Enemy Cast\GibOnTrigger.cs" />
      <Compile Include="Assets\prefabs\HealPlayerOnTrigger.cs" />
+     <Compile Include="Assets\prefabs\ObjectMovement.cs" />
+     <Compile Include="Assets\prefabs\SpeedDownPlayerOnTrigger.cs" />
+     <Compile Include="Assets\prefabs\SpeedUpPlayerOnTrigger.cs" />
      <None Include="Assets\Effects\Normal-Diffuse.shader" />
      <None Include="Assets\Effects\Unlit-Normal.shader" />
   </ItemGroup>

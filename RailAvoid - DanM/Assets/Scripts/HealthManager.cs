@@ -24,6 +24,11 @@ public class HealthManager : MonoBehaviour {
 	public float maxHealth = 10.0f;
 	private float currentHealth;
 	private float healthOriginalYScale;
+	//public GameObject gib;
+	public Color maxHealthColor = Color.green;
+	public Color minHealthColor = Color.red;
+	//GameObject Hurt = Instantiate(ExplosionHurt) as GameObject;
+	//public ParticleSystem hurtParticle;
 
 	// Use this for initialization
 	void Start () {
@@ -31,9 +36,9 @@ public class HealthManager : MonoBehaviour {
 		healthOriginalYScale = healthDisplay.localScale.y;
 	}
 
-	void OnGUI(){
-		GUILayout.Label ("HEALTH: " + currentHealth);
-	}
+	//void OnGUI(){
+	//	GUILayout.Label ("HEALTH: " + currentHealth);
+	//}
 	
 	public void DamagePlayer(float damageAmount){
 		if (damageAmount < 0) {
@@ -43,10 +48,16 @@ public class HealthManager : MonoBehaviour {
 
 		currentHealth -= damageAmount;
 		healthDisplay.localScale = new Vector3 (healthDisplay.localScale.x, healthOriginalYScale * (currentHealth / maxHealth), healthDisplay.localScale.x);
-		if (currentHealth < 0) {
+		healthDisplay.GetComponentInChildren<Renderer>().material.color = Color.Lerp (minHealthColor, maxHealthColor, currentHealth);
+		//hurtParticle.isPlaying = true;
+		if (currentHealth < 0.0f) {
+			//Instantiate (gib,transform.position,Random.rotation);
+			//Destroy (gameObject);
 			//gameover/loselife
 			currentHealth = 0;
+			//healthDisplay.GetComponentInChildren<Renderer>.enabled = false;
 			healthDisplay.localScale = new Vector3 (healthDisplay.localScale.x, healthOriginalYScale * 0, healthDisplay.localScale.x);
+			//healthDisplay.render.material.color = Color.red;
 		}
 	}
 
@@ -57,9 +68,12 @@ public class HealthManager : MonoBehaviour {
 		}
 		currentHealth += healAmount;
 		healthDisplay.localScale = new Vector3 (healthDisplay.localScale.x, healthOriginalYScale * (currentHealth / maxHealth), healthDisplay.localScale.x);
+		healthDisplay.GetComponentInChildren<Renderer>().material.color = Color.Lerp (minHealthColor, maxHealthColor, currentHealth / maxHealth);
+
 		if (currentHealth > maxHealth) {
 			currentHealth = maxHealth;
 			healthDisplay.localScale = new Vector3 (healthDisplay.localScale.x, healthOriginalYScale * 1, healthDisplay.localScale.x);
+			//healthDisplay.render.material.color = Color.green;
 		}
 	}
 
