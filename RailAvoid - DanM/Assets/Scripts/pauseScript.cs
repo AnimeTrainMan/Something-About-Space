@@ -20,7 +20,6 @@ public class pauseScript : MonoBehaviour
 			Debug.Log("pressed space");
 			Time.timeScale = 0.0f;
 			isPaused = true;
-			//scoreObject.SetActive(false);
 		}
 
 		else if (isPaused == true && Input.GetKeyDown("space"))
@@ -45,6 +44,7 @@ public class pauseScript : MonoBehaviour
 			Application.LoadLevel("mainMenu");
 			print("quit");
 			Time.timeScale = 1.0f;
+			DestroyAllGameObjects();
 		}
 	}
 
@@ -53,6 +53,16 @@ public class pauseScript : MonoBehaviour
 		if (isPaused == true)
 		{
 			windowRect0 = GUI.Window(0, windowRect0, DoMyWindow, "PAUSED");
+		}
+	}
+
+	public void DestroyAllGameObjects()
+	{
+		GameObject[] GameObjects = (FindObjectsOfType<GameObject>() as GameObject[]);
+		
+		for (int i = 0; i < GameObjects.Length; i++)
+		{
+			Destroy(GameObjects[i]);
 		}
 	}
 }

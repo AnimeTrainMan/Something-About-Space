@@ -98,6 +98,7 @@ public class HealthManager : MonoBehaviour {
 			Debug.Log(currentHealth);
 			Debug.Log("you died");
 			Application.LoadLevel("gameOverScene");
+
 		}
 
 		//DISPLAY TEST
