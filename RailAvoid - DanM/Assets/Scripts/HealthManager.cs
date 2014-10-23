@@ -2,6 +2,10 @@
 using System.Collections;
 
 public class HealthManager : MonoBehaviour {
+
+	ScoreManager score = new ScoreManager();
+	public GameObject scoreObject;
+
 	//SINGLETON
 	private static HealthManager instance = null;
 	public static HealthManager Instance
@@ -22,7 +26,7 @@ public class HealthManager : MonoBehaviour {
 
 	public Transform healthDisplay;
 	public float maxHealth = 10.0f;
-	private float currentHealth;
+	public float currentHealth;
 	private float healthOriginalYScale;
 	//public GameObject gib;
 	public Color maxHealthColor = Color.green;
@@ -30,10 +34,14 @@ public class HealthManager : MonoBehaviour {
 	//GameObject Hurt = Instantiate(ExplosionHurt) as GameObject;
 	//public ParticleSystem hurtParticle;
 
+	public bool isDead = false;
+
 	// Use this for initialization
 	void Start () {
 		currentHealth = maxHealth;
 		healthOriginalYScale = healthDisplay.localScale.y;
+
+		scoreObject = GameObject.Find("$ScoreManager");
 	}
 
 	//void OnGUI(){
@@ -50,7 +58,7 @@ public class HealthManager : MonoBehaviour {
 		healthDisplay.localScale = new Vector3 (healthDisplay.localScale.x, healthOriginalYScale * (currentHealth / maxHealth), healthDisplay.localScale.x);
 		healthDisplay.GetComponentInChildren<Renderer>().material.color = Color.Lerp (minHealthColor, maxHealthColor, currentHealth);
 		//hurtParticle.isPlaying = true;
-		if (currentHealth < 0.0f) {
+		if (currentHealth <= 0.0f) {
 			//Instantiate (gib,transform.position,Random.rotation);
 			//Destroy (gameObject);
 			//gameover/loselife
@@ -79,6 +87,18 @@ public class HealthManager : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+	
+		if (currentHealth <= 0.0f)
+		{
+			isDead = true;
+		}
+		
+		if (isDead == true && currentHealth <= 0.0f)
+		{
+			Debug.Log(currentHealth);
+			Debug.Log("you died");
+			Application.LoadLevel("gameOverScene");
+		}
 
 		//DISPLAY TEST
 		/*if (Input.GetButtonDown ("Fire1"))

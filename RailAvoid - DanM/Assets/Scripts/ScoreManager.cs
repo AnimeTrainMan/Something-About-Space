@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class ScoreManager : MonoBehaviour {
-	
+
 	public int currentLevel = 0;
 	public int[] levelScoreThresholds;
 	public int score = 0;
@@ -17,6 +17,7 @@ public class ScoreManager : MonoBehaviour {
 	}
 
 	void Update(){
+
 		score = score + (1 * Bonus);
 
 		//gamestate handler
